@@ -12,7 +12,15 @@ export function reducer(state, action) {
     case "ADD_CARD":
       return {
         ...state,
-        cards: [...state.cards, { id: Math.random() }],
+        cards: [...state.cards, { id: Math.floor(Math.random() * 1000) + 1 }],
+      };
+
+    case "SORT_CARDS":
+      return {
+        ...state,
+        cards: state.cards.sort(function (a, b) {
+          return a.id - b.id;
+        }),
       };
   }
 }

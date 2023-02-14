@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from "../../context";
 import SingleCard from "./singleCard";
+import "../../App.css";
 
 export default function Cards() {
   const {
@@ -8,12 +9,10 @@ export default function Cards() {
   } = useContext(Context);
 
   return (
-    <>
-      <h2>
-        {cards.map((card) => (
-          <SingleCard id={card.id} />
-        ))}
-      </h2>
-    </>
+    <div className="card-container">
+      {cards.map((card) => (
+        <SingleCard id={card.id} key={card.id} />
+      ))}
+    </div>
   );
 }

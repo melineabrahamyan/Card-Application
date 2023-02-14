@@ -1,13 +1,11 @@
 import { createContext, useReducer } from "react";
 import { reducer } from "./reducer";
 
-const cards = [{ id: 1 }, { id: 2 }];
-
-export const Context = createContext(cards);
+export const Context = createContext([]);
 
 export default function Provider({ children }) {
   const [state, dispatch] = useReducer(reducer, {
-    cards,
+    cards: [],
   });
 
   return (
