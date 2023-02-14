@@ -1,3 +1,6 @@
+export const initialState =
+  JSON.parse(localStorage.getItem("cardsState")) || [];
+
 export function reducer(state, action) {
   switch (action.type) {
     case "DELETE_CARD":
